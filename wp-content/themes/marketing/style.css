@@ -357,6 +357,9 @@ a {
 .sales-content {
   text-align: center; }
 
+.calss {
+  color: red; }
+
 /**
 * #.# Gallery
 *
@@ -371,6 +374,9 @@ a {
   .gallery-single img {
     max-width: 100%;
     opacity: 0.6; }
+
+.gal {
+  text-align: right; }
 
 .gallery-image {
   display: table-cell;
