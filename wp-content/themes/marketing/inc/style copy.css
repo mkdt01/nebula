@@ -1,0 +1,551 @@
+/*
+Theme Name: The NewGen Onesie
+Theme URI: http://Newgenstudio.com
+Description: custom website design using the bootstrap framework
+Author: NewGen Studio
+Author URI: http://newgenstudio.com
+Version: 1.0
+Tags: responsive, white, bootstrap 3
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+*/
+
+/* #5d7e62 dark green #9fce6e light green #383636 charcoal*/
+body { 
+
+ 	background: #ffffff;
+ 	background-repeat: repeat;
+}
+
+.container {
+	max-width: 1000px;
+	
+}
+
+/*--------------------------------------------------sTypography-------------------------------------*/
+
+
+@font-face {
+	font-family:"Code-Light";
+	src:url("CSS/fonts/CODE_Light.eot?") format("eot"),url("CSS/fonts/CODE_Light.woff") format("woff"),url("CSS/fonts/CODE_Light.ttf") format("truetype"),url("CSS/fonts/CODE_Light.svg#Code-Light") format("svg");
+	font-weight:normal;
+	font-style:normal;
+	}
+
+.navbar-text {
+	font-weight: bold;
+	margin-right: 0px;
+	
+}
+
+h1 {
+	font-weight: 200;
+	color: #3a3a3a;
+	letter-spacing:1.5;
+	font-size: 3em;
+	font-weight: bold;
+	margin-bottom: 25px;
+	margin-top: 0px;
+	font-family: 'Code-Light', sans-serif;
+
+		
+}
+
+.v2 h1 {
+	color: rgba(129,161,161,1);
+}
+
+h2 {
+	font-family: helvetica, sans-serif;
+	font-size: 2em;
+	font-weight: 200;
+	color: #3a3a3a;
+	
+}
+
+h3 {
+	color: black;
+	font-size:1.8em;
+	margin-bottom: 16px;
+	margin-top: 0px;
+	
+}
+
+h4 {
+	font-family: 'Code-Light', sans-serif;
+	font-size: 28px;
+	
+}
+
+h5 {
+	font-family: arial, sans-serif;
+	font-size: 16px;
+	font-size: italic;
+}
+
+
+p {
+	color:#1D1D1D;
+	line-height: 1.7;
+	font-size: 1.2em;
+	font-wiehgt: 200;
+	
+}
+
+.restaurants p {
+	color: #cccccc;
+	line-height: 1.7;
+	font-size: 1.1em;
+	font-wiehgt: 200;
+	letter-spacing: 1.5;
+}
+
+
+/*--------------------------------------------------sNavbar-------------------------------------*/
+
+.logo {
+	width: 250px;
+	height: 100px;
+	margin: 0px auto;
+	background: url(img/logo.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+
+.navbar-default {
+	background-color: rgba(255,255,255,0);
+	border:none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	transition: all 0.5s;
+	
+}
+
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-toggle {
+	border:none;
+}
+
+.navbar-toggle:hover {
+	background-color: rgba(255,255,255,0);
+}
+
+.navbar-default .navbar-toggle .icon-bar,
+.icon-bar {
+	background-color: black;
+	color: black;
+	height: 4px;
+	width: 30px;
+	margin-top: 6px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	text-transform: uppercase;
+	color:black;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	color:#5d7e62;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+	color: rgba(129,161,161,1);
+	border-bottom: 2px solid rgba(129,161,161,1);
+}
+
+.collapse {
+	margin-right: 50px;
+}
+
+
+.menu-button {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 2px solid black;
+	background-color: transparent;
+}
+
+/*--------------------------------------------------sLayout-------------------------------------*/
+
+
+.MA {
+	padding-top: 80px;
+	
+}
+
+.MB {
+	padding-bottom: 80px;
+}
+
+
+.ft-copy {
+	padding-top: 32px;
+}
+
+.callout {
+	margin-top: 30px;
+	text-align:center;
+}
+
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.alignright {float:right; }
+.alignleft {float:left; }
+.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+.text {
+	text-align: justify;
+	padding: 6% 10%;
+	background-color:white;
+	margin-top: 30px;
+}
+
+.text img,
+.text p {
+	margin-bottom: 25px;
+}
+
+.white {
+	background-color: white;
+}
+
+.page-header1 {
+	background-image: url(img/Pinaroo%20beef%20bgimg); 
+	background-position: cover;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.nopad {
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.align-vertical{display: table-cell; vertical-align: middle;}
+
+.center {
+	text-align: center;
+}
+
+.art-table {
+	display: table;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding:0px;
+	
+}
+
+.art-table h4
+.art-table h5,
+ {
+
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+/*--------------------------------------------------sLanding-------------------------------------*/
+
+
+
+.land-text {
+	padding-top: 14%;
+	padding-bottom: 9%;
+}
+
+#down-arrow {
+	margin-top: 13%;
+	text-align: center;
+}
+
+
+/*--------------------------------------------------sMixItUp-------------------------------------*/
+
+/*---------------------scontrols-----------------------*/
+
+.btn-portfolio {
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	margin-bottom: 35px;
+}
+
+.filter {
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-grow: 1;
+	text-align: center;
+	border: none;
+	background-color: white;
+	font-family: 'Code-Light', sans-serif;
+	font-size:2em;
+	padding: 5px;
+	margin-right: 3px;
+	text-transform: uppercase;
+}
+
+.filter:hover {
+	color: #67a488;
+}
+
+
+/*---------------------sPortfolio items-----------------------*/
+
+.containermix{
+  text-align: justify;
+  font-size: 0;
+
+}
+
+.containermix:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.containermix .mix,
+.containermix .gap {
+  display: inline-block;
+  width: 49%;
+}
+
+.containermix .mix {
+  text-align: center;
+  margin-bottom: 2%;
+  display: none;
+  padding:2%;
+  position: relative;
+  background-color: #a4a4a4;
+  border-radius: 2px;
+}
+
+
+
+.containermix .mix img {
+	margin: 0px auto;
+}
+
+.containermix .mix:hover {
+	border: none;
+}
+
+.containermix .mix:before{
+  content: '';
+  display: inline-block;
+}
+
+.overlay {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	padding: 10%;
+	background-color: #67a488;
+	color: #3a3a3a;
+
+}
+
+.overlay:hover {
+	opacity: 1;
+}
+/*--------------------------------------------------sButtons-------------------------------------*/
+
+a {
+	color: #383636;
+
+}
+
+a:hover {
+	color: #383636;
+	text-decoration:none;
+}
+
+.btn-default1 {
+	border-width: 2px;
+	padding: 12px 50px;
+	border: 3px solid white;
+	display:inline-block;
+
+}
+
+.btn-default1:hover {
+	background-color: white;
+
+
+
+}
+
+.btn-more {
+	border: 2px solid black;
+	border-radius: 4px;
+}
+
+
+/*--------------------------------------------------Jumbotron-------------------------------------*/
+
+.jumbotron {
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 11.5% 0%;
+}
+
+#controls {
+	margin-top: 50px;
+}
+/*--------------------------------------------------Single portfolio-------------------------------------*/
+
+
+.header img {
+	width: 100%;
+}
+
+/*------------------Table-------------------*/
+
+table {
+	margin: 50px auto;
+}
+
+td {
+	padding: 1% 3%;
+}
+
+td:nth-child(odd) {
+	text-align: left;
+}
+
+td:nth-child(even) {
+	text-align: left;
+}
+
+/*--------------------------------------------------Contact Form-------------------------------------*/
+
+.wpcf7 p {
+	font-family: helvetica, sans-serif;
+	font-size: 1.5em;
+	text-align: left;
+	color: #3a3a3a;
+}
+
+.wpcf7 input {
+	border: 3px solid rgba(129,161,161,1);
+	width: 100%;
+}
+
+.wpcf7 textarea {
+	border: 3px solid rgba(129,161,161,1);
+	width: 100%;
+	height: 20%;
+}
+
+.wpcf7 input[type="submit"] {
+	width: 40%;
+	float: right;
+	background-color: rgba(129,161,161,1);
+	transition: .3s ease-in-out;
+}
+
+.wpcf7 input[type="submit"]:hover {
+	background-color: rgba(129,161,161,0);
+}
+
+.contact-form {
+	max-width: 700px;
+	margin: 0 auto 35px;
+
+}
+
+.contact-formbgd {
+	background: #cac3a2;
+}
+
+/*--------------------------------------------------Footer-------------------------------------*/
+
+.watermark {
+	text-align: center;
+	padding: 20px 0px;
+}
+
+.watermark a {
+	font-style: italic;
+	font-size: 1em;
+}
+
+.watermark p {
+	font-size: 1em;
+	margin-bottom: 0px;
+}
+
+.watermark a:hover {
+	color: #ff7000;
+}
+
+/*--------------------------------------------------Media Queries-------------------------------------*/
+
+
+
+@media all and (min-width: 992px) {
+	.header {
+		margin: 50px auto;
+		max-width: 60%;
+	}
+	
+	.land-text {
+		padding-top: 2%;
+		padding-bottom: 4%;
+}
+
+}
+
+@media all and (min-width: 768px){
+	
+	 #main-menu {	 	
+		display: flex;
+		display: -ms-flexbox; /*IE 10support*/
+		display: -webkit-flex; /*IE Safari */
+	}
+	
+	#main-menu li {
+		
+		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-grow:1;
+		text-align: center;
+	}
+	
+	.nav-menu {
+		width: 350px;
+		margin: 0px auto;
+	}
+	
+	.navbar-collapse {
+		padding:0px;
+	}
+  
+}
+@media all and (min-width: 640px){
+  .container .mix,
+  .container .gap{
+    width: 32%;
+  }
+
+
+  
+}
+
+

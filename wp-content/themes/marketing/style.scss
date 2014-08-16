@@ -1,0 +1,665 @@
+/*
+Theme Name: NewGen Marketing Website
+Theme URI: http://Newgenstudio.com
+Description: custom website design using the bootstrap framework
+Author: NewGen Studio
+Author URI: http://newgenstudio.com
+Version: 1.0
+Tags: responsive, white, bootstrap 3
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+*/
+
+
+/**
+* #.# TABLE OF CONTENTS
+
+1. Variables
+2. Typography
+3. Navbar
+
+*/
+
+
+
+
+
+/**
+* #.# SASS Global variables
+*
+* This contains all variables
+*/
+
+$font-stack: 'Open-Sans', helvetica, sans-serif;
+$primary-color: #83AE9A;
+$main-black: #272727;
+
+@mixin grayscale_element($value) {
+    -webkit-filter: grayscale($value);
+    -moz-filter: grayscale($value);
+    filter: grayscale($value);
+}
+
+body { 
+
+ 	background: #ffffff;
+ 	height: 100%;
+ 	width:100%;
+}
+
+
+/**
+* #.# Typography
+*
+* This contains all type information.
+*/
+	
+
+h1, h2, h3, h4, h5 {
+	font-family: $font-stack;
+	letter-spacing: 1.5;
+	color: $main-black;
+	margin-bottom: 15px;
+	font-weight: 500;
+	
+}
+
+
+h1 {
+	font-size: 3em;
+		
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: 300;
+
+}
+
+h3 {
+
+	font-size:1.8em;
+
+}
+
+h4 {
+	font-size: 1.4em;
+	
+}
+
+h5 {
+	font-size: 1em;
+	font-style: italic;
+}
+
+
+p {
+	color: $main-black;
+	line-height: 1.7;
+	font-size: 1.2em;
+	letter-spacing: 1.5px;
+	font-weight: 300;
+	
+}
+
+/**
+* #.# Full page header
+*
+* This contains all information for offcanvas nav and primary header nav
+*/
+
+#header {
+	
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+
+.name {
+	
+    max-width:500px;
+	img {
+		width: 100%;
+	}
+}
+
+/**
+* 3. Navbar
+*
+* This contains all information for offcanvas nav and primary header nav
+*/
+
+.navbar-brand {
+	width: 250px;
+	height: 100px;
+	background: url(img/logo-01-01.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.introduction {
+	padding-top: 5px;
+}
+
+.navbar-nebula {
+	background-color: $main-black;
+	border:none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	transition: all 0.5s;
+	
+	.navbar-toggle .icon-bar {
+		background-color: white;
+		color: white;
+		height: 4px;
+		width: 30px;
+		margin-top: 6px;
+	}
+	
+	.navbar-nav {
+		
+		margin-top: 20px;
+		
+		@media screen and (min-width: 768px) {
+			float: right;	
+		}
+		
+		
+		li a {
+			color: white;
+			transition: .3s ease-in-out;
+			padding: 10px 20px;
+			text-transform: uppercase;
+			
+			&:hover {
+				color:lighten($main-black, 30%);
+			}
+			
+		>.active>a {
+			background-color:none;
+			border-bottom: 1px solid white;
+		}			
+	}
+	
+	.navbar-nav>.active>a {
+		background-color:none;
+	}
+		
+	}
+	
+	.current-menu-item > a,
+	.current-parent-item > a {	
+		border-bottom: 1px solid white;
+	}
+	
+	.current-menu-parent li a {
+	background: inherit;
+}	
+	
+}
+
+
+/*This is not nested for offcanvas Nav*/
+.icon-bar {
+	display: block;
+	background-color: black;
+	color: $main-black;
+	height: 4px;
+	width: 35px;
+	margin-top: 6px;
+	
+}
+	
+.navbar {
+	margin-bottom: 0px;
+}
+
+/*this is in order to remove bootstrap hover*/
+.navbar-toggle {
+	border:none;
+	&:hover {
+		background-color: rgba(255,255,255,0);
+	}
+	
+}
+
+.collapse {
+	margin-right: 50px;
+}
+
+/*off canvas nav on single pages */
+.menu-button {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	background-color: transparent;
+
+}
+
+.menu-offcanvas {
+	cursor: auto;
+}
+
+/*single post sub nav*/
+.glyphicon-circle-arrow-left,
+.glyphicon-circle-arrow-right, 
+.glyphicon-th {
+	font-size:1.8em;
+}
+
+#controls {
+	margin-top: 50px;
+}
+
+/**
+* #.# Wordpress layout CSS
+*
+* This contains layout for front end wordpress controls
+*/
+
+.MA {
+	padding-top: 80px;
+	
+}
+
+.MB {
+	padding-bottom: 80px;
+}
+
+
+.ft-copy {
+	padding-top: 32px;
+}
+
+.callout {
+	margin-top: 30px;
+	text-align:center;
+}
+
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.alignright {float:right; }
+.alignleft {float:left; }
+.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+section {
+	margin: 50px 0px;
+}
+
+
+
+/**
+* #.# Portfolio
+*
+* Styles of basic portfolio
+*/
+
+.portfolio-piece img {
+	width: 100%;
+}
+
+
+/**
+* #.# Mix It Up
+*
+* This contains styles for layout and general style of portfolio diplay plugin.
+*/
+
+
+/* #.# controls */
+
+.btn-portfolio {
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	margin-bottom: 35px;
+}
+
+.filter {
+	text-align: center;
+	border: none;
+	background-color: white;
+	font-family: $font-stack;
+	font-size:1.5em;
+	padding: 5px;
+	margin-right: 3px;
+	text-transform: uppercase;
+	
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+/* #.# Portfolio Items */
+
+.containermix {
+  text-align: justify;
+  font-size: 0;
+  
+  &:after {
+	  content: '';
+	  display: inline-block;
+	  width: 100%;
+  }
+  
+  .mix,
+  .gap {
+	  display: inline-block;
+	  width: 49%;
+  }
+  
+  .mix {
+	  text-align: center;
+	  margin-bottom: 2%;
+	  display: none;
+	  padding:2%;
+	  position: relative;
+	  background-color: #a4a4a4;
+	  border-radius: 2px;
+
+	  
+	  img {
+		  margin: 0px auto;		  
+	  }
+	  
+	  &:hover {
+		  border: none;
+	  }
+	  
+	  &:before {
+		  content: '';
+		  display: inline-block;
+	  }  
+	  
+  }
+  
+}
+
+.overlay {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	padding: 10%;
+	background-color: #67a488;
+	color: #3a3a3a;
+
+	&:hover {
+		opacity: 1;		
+	}
+}
+
+.art-table {
+	display: table;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding:0px;
+	
+	h4, h5 {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+}
+
+
+
+/**
+* #.# Buttons
+*
+* This contains styles for all buttons
+*/
+
+a {
+	color: $main-black;
+
+	&:hover {
+		color: #383636;
+		text-decoration:none;
+	}
+
+}
+
+.btn-info {
+	background-color: white;
+	color: $main-black;
+	border: 2px solid $main-black;
+	padding: 10px 55px;
+	transition: 0.5s ease-in-out;
+	
+	&:hover {
+		border-color: $primary-color;
+		color: $primary-color;
+		background-color: white;
+	}
+}
+
+/**
+* #.# Jumbotron
+*
+* Jumbotron is feature div element
+*/
+
+.bgd-opaque {
+	background-color: rgba(255,255,255,0.85);
+	padding: 2% 0%;
+}
+
+.jumbotron {
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 6% 0%;
+	
+	h1 {
+	font-size: 1.6em;
+	font-weight: 300;
+	
+	@media screen and (min-width: 768px) {
+		font-size: 4em;
+	}
+	}
+}
+
+
+#jumbotron {
+	margin-top: 0px;
+}
+
+
+/**
+* #.# Sales Messages
+*
+* This section containes style elements for individual portfolios.
+*/
+
+
+.thumbnail {
+	max-width: 150px;
+	margin: 0px auto;
+	border: none;
+}
+
+.sales-content {
+	text-align: center;
+}
+
+
+/**
+* #.# Gallery
+*
+* This section containes style elements for individual portfolios.
+*/
+
+.grid {
+
+	max-width: 750px;
+	margin: 0px auto;
+
+}
+
+.gallery-single {
+	
+
+	min-height:100px;
+
+	img {
+
+		max-width: 100%;
+		opacity: 0.6;
+
+	}	
+}
+
+.gallery-image {
+
+	display: table-cell;
+	vertical-align: middle;
+	
+}
+
+
+/**
+* #.# Blog
+*
+* This section containes style elements for blog posts home.php
+*/
+
+
+.sidebar {
+	margin-top: 40px;
+}
+
+
+/**
+* #.# Carousel
+*
+* This section containes style elements for Carousel on blog page and other.
+*/
+
+
+.carousel-inner>.item>a>img {
+	display: block;
+	max-height: 350px;
+	width: auto;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+/**
+* #.# Contact Form
+*
+* This section containes style elements for Contact form 7 plugin.
+*/
+
+.wpcf7 {
+
+
+	p {
+		font-family: $font-stack;
+		font-size: 1.5em;
+		text-align: left;
+		color: $primary-color;
+		font-weight: 600;
+	}
+
+	input {
+		border: 2px solid $primary-color;
+		width: 100%;
+		
+		&[type="submit"] {
+			width: 40%;
+			float: right;
+			color: white;
+			background-color: $primary-color;
+			transition: .3s ease-in-out;
+			
+			&:hover {
+				background-color:rgba(129,161,161,0);
+				color: $primary-color;
+			}
+		}
+		
+		p {
+			color: black;
+		}
+	}
+	
+	textarea {
+		border: 2px solid rgba(129,161,161,1);
+		width: 100%;
+		height: 130px;		
+	}
+
+
+
+}
+
+.contact-form {
+	max-width: 700px;
+	margin: 0 auto 35px;
+
+}
+
+.contact-formbgd {
+	
+}
+
+/*--------------------------------------------------Footer-------------------------------------*/
+
+.watermark {
+	text-align: center;
+	padding: 20px 0px;
+}
+
+.watermark a {
+	font-style: italic;
+	font-size: 1em;
+}
+
+.watermark p {
+	font-size: 1em;
+	margin-bottom: 0px;
+}
+
+.watermark a:hover {
+	color: #ff7000;
+}
+
+/*--------------------------------------------------Media Queries-------------------------------------*/
+
+
+
+@media all and (min-width: 992px) {
+	.header {
+		margin: 50px auto;
+		max-width: 60%;
+	}
+	
+	.land-text {
+		padding-top: 2%;
+		padding-bottom: 4%;
+}
+
+}
+
+
+@media all and (min-width: 640px){
+  .container .mix,
+  .container .gap{
+    width: 32%;
+  }
+
+
+  
+}
