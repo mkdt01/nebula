@@ -38,19 +38,30 @@
 				$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );				
 			?>
 			
-			<div class="col-xs-6 col-sm-3">			
-				<div class="portfolio-piece">		
-					<p><a href="<?php the_permalink(); ?>"><img src="<?php echo $thumbnail_url[0]; ?>" /></a></p>					
-				</div>
+			
+			<div class="col-xs-6 col-sm-4 col-md-3 portfolio-grid">
 				
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h3></a>
+				<div class="portfolio">
+					<a href="<?php the_permalink(); ?>">
+						<div class="portfolio-piece">
+						
+							<img src="<?php echo $thumbnail_url[0]; ?>" />
+						
+						</div>			
+					</a>
+				</div>
+				<div class="portfolio-title">
+					<a href="<?php the_permalink(); ?>"> <h3><?php the_title(); ?></h3></a>
+				</div>
+			
+	
 			</div>
-			
-			
+		
+			<!--
 			<?php $portfolio_count = $the_query->current_post + 1; ?>	
 			<?php if ( $portfolio_count % 4 == 0): ?>
 			</div><div class="row">
-			<?php endif; ?>
+			<?php endif; ?> -->
 			
 			
 			<?php endwhile; endif; ?>

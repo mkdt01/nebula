@@ -37,7 +37,7 @@ body {
 */
 h1, h2, h3, h4, h5 {
   font-family: 'Open-Sans', helvetica, sans-serif;
-  letter-spacing: 1.5;
+  letter-spacing: 1.5px;
   color: #272727;
   margin-bottom: 15px;
   font-weight: 500; }
@@ -50,7 +50,7 @@ h2 {
   font-weight: 300; }
 
 h3 {
-  font-size: 1.8em; }
+  font-size: 1.5em; }
 
 h4 {
   font-size: 1.4em; }
@@ -174,12 +174,6 @@ p {
 *
 * This contains layout for front end wordpress controls
 */
-.MA {
-  padding-top: 80px; }
-
-.MB {
-  padding-bottom: 80px; }
-
 .ft-copy {
   padding-top: 32px; }
 
@@ -219,8 +213,28 @@ section {
 *
 * Styles of basic portfolio
 */
-.portfolio-piece img {
-  width: 100%; }
+.portfolio-grid {
+  display: table; }
+  .portfolio-grid .portfolio {
+    max-width: 275px;
+    border: 1px solid grey; }
+  .portfolio-grid .portfolio-piece {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 10%;
+    height: 100px;
+    margin: 0px auto; }
+    .portfolio-grid .portfolio-piece img {
+      max-width: 100%; }
+    @media screen and (min-width: 500px) {
+      .portfolio-grid .portfolio-piece {
+        height: 200px; } }
+  .portfolio-grid .portfolio-title {
+    display: table-row; }
+    @media screen and (max-width: 500px) {
+      .portfolio-grid .portfolio-title h3 {
+        font-size: 1em; } }
 
 /**
 * #.# Mix It Up
@@ -335,11 +349,12 @@ a {
   background-size: cover;
   padding: 6% 0%; }
   .jumbotron h1 {
-    font-size: 1.6em;
-    font-weight: 300; }
+    font-size: 1.7em;
+    font-weight: 300;
+    letter-spacing: 1px; }
     @media screen and (min-width: 768px) {
       .jumbotron h1 {
-        font-size: 4em; } }
+        font-size: 3em; } }
 
 #jumbotron {
   margin-top: 0px; }
@@ -367,17 +382,19 @@ a {
   margin: 0px auto; }
 
 .gallery-single {
+  display: table;
   min-height: 100px; }
   .gallery-single img {
     max-width: 100%;
-    opacity: 0.6; }
-
-.gal {
-  text-align: right; }
+    opacity: 0.6;
+    transition: 0.3s ease-in-out; }
+    .gallery-single img:hover {
+      opacity: 1; }
 
 .gallery-image {
   display: table-cell;
-  vertical-align: middle; }
+  vertical-align: middle;
+  text-align: center; }
 
 /**
 * #.# Blog
@@ -411,13 +428,13 @@ a {
   color: #83AE9A;
   font-weight: 600; }
 .wpcf7 input {
-  border: 2px solid #83AE9A;
+  border: 2px solid #272727;
   width: 100%; }
   .wpcf7 input[type="submit"] {
     width: 40%;
     float: right;
     color: white;
-    background-color: #83AE9A;
+    background-color: #272727;
     transition: 0.3s ease-in-out; }
     .wpcf7 input[type="submit"]:hover {
       background-color: rgba(129, 161, 161, 0);
@@ -425,7 +442,7 @@ a {
   .wpcf7 input p {
     color: black; }
 .wpcf7 textarea {
-  border: 2px solid #81a1a1;
+  border: 2px solid #272727;
   width: 100%;
   height: 130px; }
 

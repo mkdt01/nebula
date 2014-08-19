@@ -10,7 +10,7 @@
 			
 			<?php foreach( $images as $image ): ?>
 			
-				<div class="col-xs-3 gallery-single">
+				<div class="col-xs-4 col-sm-3 gallery-single">
 				
 				<div class="gallery-image"> 
 		            <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
