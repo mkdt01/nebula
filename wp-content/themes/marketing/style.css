@@ -30,27 +30,39 @@ body {
   height: 100%;
   width: 100%; }
 
+@font-face {
+  font-family: Sifonn;
+  src: url(fonts/sifonn_basic.otf); }
+
+@font-face {
+  font-family: Campton-light;
+  src: url(fonts/campton-light.otf); }
+
+@font-face {
+  font-family: Campton;
+  src: url(fonts/campton-bold.otf); }
+
 /**
 * #.# Typography
 *
 * This contains all type information.
 */
 h1, h2, h3, h4, h5 {
-  font-family: 'Open-Sans', helvetica, sans-serif;
-  letter-spacing: 1.5px;
+  font-family: Campton, helvetica, sans-serif;
+  letter-spacing: 2.5px;
   color: #272727;
   margin-bottom: 15px;
-  font-weight: 500; }
+  font-weight: 300; }
 
 h1 {
   font-size: 3em; }
 
 h2 {
-  font-size: 2em;
-  font-weight: 300; }
+  font-size: 2em; }
 
 h3 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  font-family: Campton-light; }
 
 h4 {
   font-size: 1.4em; }
@@ -236,6 +248,11 @@ section {
       .portfolio-grid .portfolio-title h3 {
         font-size: 1em; } }
 
+.portfolio-single-images img {
+  max-width: 100%;
+  height: auto;
+  margin: 35px 0px; }
+
 /**
 * #.# Mix It Up
 *
@@ -252,7 +269,7 @@ section {
   text-align: center;
   border: none;
   background-color: white;
-  font-family: 'Open-Sans', helvetica, sans-serif;
+  font-family: Campton, helvetica, sans-serif;
   font-size: 1.5em;
   padding: 5px;
   margin-right: 3px;
@@ -324,8 +341,8 @@ a {
     text-decoration: none; }
 
 .btn-info {
-  background-color: white;
-  color: #272727;
+  background-color: #272727;
+  color: white;
   border: 2px solid #272727;
   padding: 10px 55px;
   transition: 0.5s ease-in-out; }
@@ -334,14 +351,26 @@ a {
     color: #83AE9A;
     background-color: white; }
 
+.btn-primary {
+  margin: 15px 0px;
+  padding: 15px 10px;
+  border: 2px solid #272727;
+  background-color: white;
+  color: #272727;
+  transition: 0.3s ease-in-out; }
+  .btn-primary:hover {
+    border: 2px solid #272727;
+    background-color: white;
+    color: #272727; }
+
 /**
 * #.# Jumbotron
 *
 * Jumbotron is feature div element
 */
 .bgd-opaque {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2% 0%; }
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 7.5% 0%; }
 
 .jumbotron {
   background-position: left top;
@@ -351,13 +380,22 @@ a {
   .jumbotron h1 {
     font-size: 1.7em;
     font-weight: 300;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    margin-bottom: 20px; }
     @media screen and (min-width: 768px) {
       .jumbotron h1 {
-        font-size: 3em; } }
+        font-size: 3.9em;
+        margin-bottom: 50px;
+        letter-spacing: 3px; } }
 
 #jumbotron {
   margin-top: 0px; }
+
+.grow {
+  font-family: sifonn, 'open-sans', sans-serif; }
+  @media screen and (min-width: 768px) {
+    .grow {
+      font-size: 70px; } }
 
 /**
 * #.# Sales Messages
@@ -377,13 +415,9 @@ a {
 *
 * This section containes style elements for individual portfolios.
 */
-.grid {
-  max-width: 750px;
-  margin: 0px auto; }
-
 .gallery-single {
   display: table;
-  min-height: 100px; }
+  min-height: 130px; }
   .gallery-single img {
     max-width: 100%;
     opacity: 0.6;
@@ -417,39 +451,53 @@ a {
   margin: 0 auto; }
 
 /**
+* #.# Contact Page
+*
+* This section containes style elements for Contact form 7 plugin.
+*/
+#map-canvas {
+  min-height: 400px;
+  margin-bottom: 50px; }
+
+.contact-details h2 {
+  margin-bottom: 38px; }
+.contact-details .glyphicon {
+  margin-right: 15px; }
+
+/**
 * #.# Contact Form
 *
 * This section containes style elements for Contact form 7 plugin.
 */
+#contact {
+  padding: 90px 0px;
+  margin-bottom: 0px; }
+  #contact h1 {
+    margin-bottom: 50px; }
+
 .wpcf7 p {
-  font-family: 'Open-Sans', helvetica, sans-serif;
+  font-family: Campton, helvetica, sans-serif;
   font-size: 1.5em;
   text-align: left;
-  color: #83AE9A;
+  color: #272727;
   font-weight: 600; }
 .wpcf7 input {
-  border: 2px solid #272727;
+  border: 1px solid #272727;
   width: 100%; }
   .wpcf7 input[type="submit"] {
     width: 40%;
     float: right;
-    color: white;
-    background-color: #272727;
+    color: black;
     transition: 0.3s ease-in-out; }
-    .wpcf7 input[type="submit"]:hover {
-      background-color: rgba(129, 161, 161, 0);
-      color: #83AE9A; }
   .wpcf7 input p {
     color: black; }
 .wpcf7 textarea {
-  border: 2px solid #272727;
+  border: 1px solid #272727;
   width: 100%;
   height: 130px; }
 
 .contact-form {
-  max-width: 700px;
   margin: 0 auto 35px; }
-
 
 /*--------------------------------------------------Footer-------------------------------------*/
 .watermark {

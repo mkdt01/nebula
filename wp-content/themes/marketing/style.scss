@@ -33,15 +33,11 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 * This contains all variables
 */
 
-$font-stack: 'Open-Sans', helvetica, sans-serif;
+$font-stack: Campton, helvetica, sans-serif;
 $primary-color: #83AE9A;
 $main-black: #272727;
 
-@mixin grayscale_element($value) {
-    -webkit-filter: grayscale($value);
-    -moz-filter: grayscale($value);
-    filter: grayscale($value);
-}
+
 
 body { 
 
@@ -50,6 +46,20 @@ body {
  	width:100%;
 }
 
+@font-face {
+	font-family: Sifonn;
+	src: url(fonts/sifonn_basic.otf);
+}
+
+@font-face {
+	font-family: Campton-light;
+	src: url(fonts/campton-light.otf);
+}
+
+@font-face {
+	font-family: Campton;
+	src: url(fonts/campton-bold.otf);
+}
 
 /**
 * #.# Typography
@@ -60,10 +70,10 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: $font-stack;
-	letter-spacing: 1.5px;
+	letter-spacing: 2.5px;
 	color: $main-black;
 	margin-bottom: 15px;
-	font-weight: 500;
+	font-weight: 300;
 	
 }
 
@@ -75,13 +85,13 @@ h1 {
 
 h2 {
 	font-size: 2em;
-	font-weight: 300;
 
 }
 
 h3 {
 
 	font-size:1.5em;
+	font-family: Campton-light;
 
 }
 
@@ -332,7 +342,12 @@ section {
 	
 }
 
+.portfolio-single-images img {
 
+	max-width: 100%;
+	height: auto;
+	margin: 35px 0px;
+}
 
 
 /**
@@ -461,8 +476,8 @@ a {
 }
 
 .btn-info {
-	background-color: white;
-	color: $main-black;
+	background-color: $main-black;
+	color: white;
 	border: 2px solid $main-black;
 	padding: 10px 55px;
 	transition: 0.5s ease-in-out;
@@ -474,6 +489,24 @@ a {
 	}
 }
 
+.btn-primary {
+
+	margin: 15px 0px;
+	padding: 15px 10px;
+	border: 2px solid $main-black;
+	background-color: white;
+	color: $main-black;
+	transition: 0.3s ease-in-out;
+	
+	&:hover {
+		border: 2px solid $main-black;
+		background-color: lighten(white, 10%);
+		color: $main-black;
+	}
+	
+}
+
+
 /**
 * #.# Jumbotron
 *
@@ -481,8 +514,8 @@ a {
 */
 
 .bgd-opaque {
-	background-color: rgba(255,255,255,0.85);
-	padding: 2% 0%;
+	background-color: rgba(255,255,255,0.95);
+	padding: 7.5% 0%;
 }
 
 .jumbotron {
@@ -492,12 +525,16 @@ a {
 	padding: 6% 0%;
 	
 	h1 {
+	
 	font-size: 1.7em;
 	font-weight: 300;
 	letter-spacing: 1px;
+	margin-bottom: 20px;
 	
 	@media screen and (min-width: 768px) {
-		font-size: 3em;
+		font-size: 3.9em;
+		margin-bottom: 50px;
+		letter-spacing: 3px;
 	}
 	}
 }
@@ -507,7 +544,13 @@ a {
 	margin-top: 0px;
 }
 
-
+.grow {
+	font-family: sifonn, 'open-sans', sans-serif;
+	
+	@media screen and (min-width: 768px) {
+		font-size: 70px;
+	}
+}
 /**
 * #.# Sales Messages
 *
@@ -531,17 +574,10 @@ a {
 * This section containes style elements for individual portfolios.
 */
 
-.grid {
-
-	max-width: 750px;
-	margin: 0px auto;
-
-}
-
 .gallery-single {
 	
 	display: table;
-	min-height:100px;
+	min-height:130px;
 
 	img {
 
@@ -594,10 +630,41 @@ a {
 
 
 /**
+* #.# Contact Page
+*
+* This section containes style elements for Contact form 7 plugin.
+*/
+
+#map-canvas {
+	min-height: 400px;
+	margin-bottom: 50px;
+}
+
+.contact-details {
+
+	h2 {
+		margin-bottom: 38px;
+	}
+
+	.glyphicon {
+		margin-right: 15px;
+	}
+}
+
+/**
 * #.# Contact Form
 *
 * This section containes style elements for Contact form 7 plugin.
 */
+
+#contact {
+	padding: 90px 0px;
+	margin-bottom: 0px;
+	
+	h1 {
+		margin-bottom: 50px;
+	}
+}
 
 .wpcf7 {
 
@@ -606,24 +673,22 @@ a {
 		font-family: $font-stack;
 		font-size: 1.5em;
 		text-align: left;
-		color: $primary-color;
+		color: $main-black;
 		font-weight: 600;
 	}
 
 	input {
-		border: 2px solid $main-black;
+		border: 1px solid $main-black;
 		width: 100%;
 		
 		&[type="submit"] {
 			width: 40%;
 			float: right;
-			color: white;
-			background-color: $main-black;
+			color: black;
 			transition: .3s ease-in-out;
 			
 			&:hover {
-				background-color:rgba(129,161,161,0);
-				color: $primary-color;
+
 			}
 		}
 		
@@ -633,8 +698,9 @@ a {
 	}
 	
 	textarea {
-		border: 2px solid $main-black;
+		border: 1px solid $main-black;
 		width: 100%;
+
 		height: 130px;		
 	}
 
@@ -643,14 +709,11 @@ a {
 }
 
 .contact-form {
-	max-width: 700px;
 	margin: 0 auto 35px;
 
 }
 
-.contact-formbgd {
-	
-}
+
 
 /*--------------------------------------------------Footer-------------------------------------*/
 
