@@ -8,37 +8,6 @@
 
     <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
     
-    <style type="text/css">
-      #map-canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAomIJDkS6rGU4KrPRbKftqooEY-DQtIiQ">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        
-        var coords = new google.maps.LatLng(-37.887832, 145.031416)
-        
-        var mapOptions = {
-          center: coords,
-          zoom: 15,
-          scrollwheel: false
-        };
-        
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      
-      
-        var marker = new google.maps.Marker({
-	        position: coords,
-	        map: map,
-	        title: 'Nebulas Palace of creativity'
-        });
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
-    
   <?php wp_head(); ?>
   </head>
 
@@ -47,7 +16,7 @@
 <body <?php body_class(); ?>>
 
 
-<div class="navbar navbar-nebula navbar-static-top" role="navigation">
+<nav class="navbar navbar-nebula navbar-static-top" role="navigation">
 	<div class="container">
         <div class="navbar-header col-sm-3">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -56,16 +25,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          
-         
-		   <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"></a>
-    
-          
+          <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"></a>
         </div>
-		
-
-
- <?php
+		<?php
             wp_nav_menu( array(
                 'menu'              => 'primary',
                 'theme_location'    => 'primary',
@@ -77,8 +39,5 @@
                 'walker'            => new wp_bootstrap_navwalker())
             );
         ?>
-
-
-		
 	</div> <!-end container -->
-</div> <!--end navbar-->
+</nav> <!--end navbar-->

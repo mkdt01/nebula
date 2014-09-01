@@ -3,16 +3,15 @@
 	//load the theme CSS
 	function theme_styles() {
 	
-		wp_register_style( 'bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css','','', 'screen'  );
-		wp_enqueue_style( 'bootstrap_css' );
-		
+		wp_register_style( 'bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css','','', 'screen'  );		
 		wp_register_style( 'extbootstrap_css', get_template_directory_uri() . '/css/jasny-bootstrap.min.css','','', 'screen'  );
-		wp_enqueue_style( 'extbootstrap_css' );		
-		
-		wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
-		wp_enqueue_style( 'googleFonts');
-
+		wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,300|Raleway:400,300,500,600,700,800|Montserrat:400,700');
 		wp_register_style( 'maincssstylesheet', get_template_directory_uri().'/style.css' );
+
+
+		wp_enqueue_style( 'bootstrap_css' );
+		wp_enqueue_style( 'extbootstrap_css' );		
+		wp_enqueue_style( 'googleFonts');
 		wp_enqueue_style( 'maincssstylesheet' );
 	
 		}
@@ -22,18 +21,21 @@
 	
 		global $wp_scripts;
 			
-		wp_register_script( 'html_shiv', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js', '', '', false );
-		wp_register_script( 'respond_js', 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js', '', '', false );
+		wp_register_script( 'html_shiv', '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js', NULL, '3.7.2', false );
+		wp_register_script( 'respond_js', '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js', NULL, '1.4.2', false );
 		
 		$wp_scripts->add_data( 'html5_shiv', 'conditional', 'lt IE 9' );
 		$wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9' );
 		
-		wp_enqueue_script( 'mixitup', get_template_directory_uri().'/js/jquery.mixitup.js', array( 'jquery' ), '', true );		
-		wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true );
-		wp_enqueue_script( 'extbootstrap_js', get_template_directory_uri() . '/js/jasny-bootstrap.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'mixitup', get_template_directory_uri().'/js/jquery.mixitup.js', array( 'jquery' ), '1.1', true );		
+		wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.2', true );
+		wp_enqueue_script( 'extbootstrap_js', get_template_directory_uri() . '/js/jasny-bootstrap.min.js', array('jquery'), '1.0', true );
 		
-		wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery', 'bootstrap_js'), '', true );
-	
+		wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery', 'bootstrap_js'), '1.0', true );
+
+		wp_enqueue_script( 'mapapi', '//maps.googleapis.com/maps/api/js?key=AIzaSyAomIJDkS6rGU4KrPRbKftqooEY-DQtIiQ', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'maps', get_template_directory_uri() . '/js/maps.js', array('jquery', 'mapapi'), '1.0', true );
+		
 	}
 	
 				

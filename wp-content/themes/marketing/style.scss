@@ -24,16 +24,15 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 */
 
 
-
-
-
 /**
 * #.# SASS Global variables
 *
 * This contains all variables
 */
 
-$font-stack: Campton, helvetica, sans-serif;
+$raleway: 'Raleway', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$opensans: 'Open Sans', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
+//http://rachaelmoore.name/posts/design/css/web-safe-helvetica-font-stack/
 $primary-color: #83AE9A;
 $main-black: #272727;
 
@@ -46,20 +45,8 @@ body {
  	width:100%;
 }
 
-@font-face {
-	font-family: Sifonn;
-	src: url(fonts/sifonn_basic.otf);
-}
 
-@font-face {
-	font-family: Campton-light;
-	src: url(fonts/campton-light.otf);
-}
 
-@font-face {
-	font-family: Campton;
-	src: url(fonts/campton-bold.otf);
-}
 
 /**
 * #.# Typography
@@ -68,49 +55,32 @@ body {
 */
 	
 
-h1, h2, h3, h4, h5 {
-	font-family: $font-stack;
-	letter-spacing: 2.5px;
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+	font-family: $opensans;
+	//letter-spacing: 2.5px;
 	color: $main-black;
 	margin-bottom: 15px;
 	font-weight: 300;
 	
 }
+.giga 	{ font-size: 5em; }
+.mega 	{ font-size: 4.2em; }
+.kilo 	{ font-size: 3.5em; }
+h1, .h1 { font-size: 3em; }
+h2, .h2 { font-size: 2em; }
+h3, .h3 { font-size:1.5em; }
+h4, .h4 { font-size: 1.4em; }
+h5, .h5 { font-size: 1em; }
 
-
-h1 {
-	font-size: 3em;
-		
-}
-
-h2 {
-	font-size: 2em;
-
-}
-
-h3 {
-
-	font-size:1.5em;
-	font-family: Campton-light;
-
-}
-
-h4 {
-	font-size: 1.4em;
-	
-}
-
-h5 {
-	font-size: 1em;
+em {
 	font-style: italic;
 }
 
-
 p {
 	color: $main-black;
-	line-height: 1.7;
+	line-height: 1.7em;
 	font-size: 1.2em;
-	letter-spacing: 1.5px;
 	font-weight: 300;
 	
 }
@@ -145,7 +115,7 @@ p {
 .navbar-brand {
 	width: 250px;
 	height: 100px;
-	background: url(img/logo-01-01.png);
+	background: url('img/logo-01-01.png');
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: top left;
@@ -159,8 +129,12 @@ p {
 	background-color: $main-black;
 	border:none;
 	padding-top: 20px;
-	padding-bottom: 20px;
-	transition: all 0.5s;
+	padding-bottom: 0px;
+	
+	-webkit-transition: all 400ms ease;
+	   -moz-transition: all 400ms ease;
+	   		transition: all 400ms ease;
+		
 	
 	.navbar-toggle .icon-bar {
 		background-color: white;
@@ -181,21 +155,24 @@ p {
 		
 		li a {
 			color: white;
-			transition: .3s ease-in-out;
-			padding: 10px 20px;
+			-webkit-transition: all 300ms ease-in-out;
+			   -moz-transition: all 300ms ease-in-out;
+			   		transition: all 300ms ease-in-out;
+			padding: 10px 15px;
+			margin: 0 5px;
 			text-transform: uppercase;
 			
 			&:hover {
 				color:lighten($main-black, 30%);
 			}
 			
-		>.active>a {
+		> .active > a {
 			background-color:none;
 			border-bottom: 1px solid white;
 		}			
 	}
 	
-	.navbar-nav>.active>a {
+	.navbar-nav > .active > a {
 		background-color:none;
 	}
 		
@@ -370,7 +347,7 @@ section {
 	text-align: center;
 	border: none;
 	background-color: white;
-	font-family: $font-stack;
+	font-family: $opensans;
 	font-size:1.5em;
 	padding: 5px;
 	margin-right: 3px;
@@ -475,12 +452,19 @@ a {
 
 }
 
+.btn {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
 .btn-info {
 	background-color: $main-black;
 	color: white;
 	border: 2px solid $main-black;
 	padding: 10px 55px;
-	transition: 0.5s ease-in-out;
+	-webkit-transition: all 150ms ease-in-out;
+	   -moz-transition: all 150ms ease-in-out;
+	   		transition: all 150ms ease-in-out;
 	
 	&:hover {
 		border-color: $primary-color;
@@ -496,7 +480,9 @@ a {
 	border: 2px solid $main-black;
 	background-color: white;
 	color: $main-black;
-	transition: 0.3s ease-in-out;
+	-webkit-transition: all 150ms ease-in-out;
+	   -moz-transition: all 150ms ease-in-out;
+	   		transition: all 150ms ease-in-out;
 	
 	&:hover {
 		border: 2px solid $main-black;
@@ -525,16 +511,17 @@ a {
 	padding: 6% 0%;
 	
 	h1 {
-	
-	font-size: 1.7em;
+	font-family: $raleway;
+	font-size: 4.5em;
 	font-weight: 300;
-	letter-spacing: 1px;
+	letter-spacing: -1px;
+	
 	margin-bottom: 20px;
 	
 	@media screen and (min-width: 768px) {
-		font-size: 3.9em;
+		font-size: 92px;
 		margin-bottom: 50px;
-		letter-spacing: 3px;
+		letter-spacing: -1px;
 	}
 	}
 }
@@ -545,7 +532,7 @@ a {
 }
 
 .grow {
-	font-family: sifonn, 'open-sans', sans-serif;
+	font-family: $opensans;
 	
 	@media screen and (min-width: 768px) {
 		font-size: 70px;
@@ -582,8 +569,10 @@ a {
 	img {
 
 		max-width: 100%;
-		opacity: 0.6;
-		transition: 0.3s ease-in-out;
+		opacity: 0.4;
+		-webkit-transition: all 100ms ease-in-out;
+		   -moz-transition: all 100ms ease-in-out;
+		   		transition: all 100ms ease-in-out;
 		
 		&:hover{
 			opacity: 1;
@@ -620,7 +609,7 @@ a {
 */
 
 
-.carousel-inner>.item>a>img {
+.carousel-inner > .item > a > img {
 	display: block;
 	max-height: 350px;
 	width: auto;
@@ -636,7 +625,7 @@ a {
 */
 
 #map-canvas {
-	min-height: 400px;
+	min-height: 300px;
 	margin-bottom: 50px;
 }
 
@@ -670,7 +659,7 @@ a {
 
 
 	p {
-		font-family: $font-stack;
+		font-family: $opensans;
 		font-size: 1.5em;
 		text-align: left;
 		color: $main-black;
@@ -763,3 +752,7 @@ a {
 
   
 }
+/*--------------------------------------------------Google Map-------------------------------------*/
+
+
+#map-canvas { height: 100% }
