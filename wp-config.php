@@ -16,16 +16,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'Nebula');
+define('DB_NAME', 'blindfr_nebula');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'blindfr_nebula');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'cG^5#tK}fm7P^wmlJRoA&H|9z');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'amethyst.relentlesshosting.com.au');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
