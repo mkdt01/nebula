@@ -30,6 +30,8 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 * This contains all variables
 */
 
+@import "sass/ionicons";
+
 $raleway: 'Raleway', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 $opensans: 'Open Sans', "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; 
 //http://rachaelmoore.name/posts/design/css/web-safe-helvetica-font-stack/

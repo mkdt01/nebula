@@ -11,28 +11,65 @@ Template Name: Full Width
 
 	<div class="container">
 		<div class="page-header">
+		
+		
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 			<div class="row">	
 			
-				<div class="col-xs-9">	
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-						<h1>Portfolio - <?php the_title(); ?></h1>
-					<?php endwhile; endif; ?>
-					<?php rewind_posts(); ?>
+				<div class="col-sm-7 col-md-8">	
+					
+						<h1 style="margin-bottom:0;"><?php the_title(); ?></h1>
+
+
+
 				</div>
 				
-				<div class="col-xs-3 prev-next">
-					<?php next_post_link( '%link', '<span class="glyphicon glyphicon-circle-arrow-left"></span>' ); ?>
-					<a href="<?php bloginfo( 'url' ); ?>/?p=212"><span class="glyphicon glyphicon-th"></span></a>
-					<?php previous_post_link( '%link', '<span class="glyphicon glyphicon-circle-arrow-right"></span>' ); ?>
+				<div class="col-sm-5 col-md-4 prev-next">
+					<p class="text-right" style="margin-top:26px; margin-bottom:0; font-size:24px;">
+						<?php next_post_link( '%link', '<span class="icon ion-arrow-left-c"></span> Previous' ); ?>
+
+						&emsp;
+
+						<?php previous_post_link( '%link', 'Next <span class="icon ion-arrow-right-c"></span>' ); ?>
+					</p>
 				</div> 
-			</div> <!--end row-->
+				
+				<div class="col-sm-12">
+				
+					<h4 class="h2" style="margin-top:0;"><small style="font-siz"><?php 
+
+// literally the hardest way to achieve this... 
+// but it works						
+						
+$term_list = wp_get_post_terms($post->ID, 'category', array("fields" => "names"));
+$count = count($term_list);
+$i = 0;
+foreach ( $term_list as $term ) {
+	if(++$i === $count) {
+		echo  $term;
+	} else {
+		echo  $term . ", ";
+	}
+
+}
+
+						
+						?></small></h4>
+				
+				</div>
+				
+			</div> <!--end row-->	
+	
+<?php endwhile; endif; ?>
+<?php rewind_posts(); ?>	
+
 		</div> <!--end page-header-->
 	</div> <!-- end container -->
 	
 	<div class="container">
 		<div class="row">
 		
-			<div class="col-sm-9">
+			<div class="col-sm-7 col-md-8">
 			
 			<?php 			 
 				$images = get_field('portfolio_images');
@@ -41,13 +78,17 @@ Template Name: Full Width
 				
 				<?php foreach( $images as $image ): ?>
 
-			<div class="row">
+			<!--
+<div class="row">
 				<div class="col-sm-12 portfolio-single-images">
+-->
 				
-					<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
-				
+					<p><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive" /></p>
+			<!--
+	
 				</div>
 			</div>
+-->
 			
 			<?php endforeach; ?>
 				   
@@ -55,7 +96,7 @@ Template Name: Full Width
 		
 			</div> <!-- end col-sm-9 -->
 			
-			<div class="col-sm-3">
+			<div class="col-sm-5 col-md-4">
 			
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				
